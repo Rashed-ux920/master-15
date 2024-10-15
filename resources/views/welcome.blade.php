@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -20,7 +20,7 @@
             @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
                     @auth
-                        <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
+                        <a href="{{ route('home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
                     @else
                         <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
@@ -137,4 +137,19 @@
             </div>
         </div>
     </body>
-</html>
+</html> --}}
+@extends('userfront.layouts.master')
+@section('contant')
+
+    @include('userfront.includes.section.carouselfront')
+    @include('userfront.includes.section.featurefront')
+    @include('userfront.includes.section.aboutfront')
+    @include('userfront.includes.section.servicefront')
+    @include('userfront.includes.section.feature2front')
+    @include('userfront.includes.section.projectsfront')
+    @include('userfront.includes.section.qoutefront')
+    @include('userfront.includes.section.teamfront')
+    @include('userfront.includes.section.testimonialfront')
+
+@endsection
+

@@ -19,12 +19,21 @@
                         <a href="{{route('freeqoute')}}" class="dropdown-item">Free Quote</a>
                         <a href="{{route('ourteam')}}" class="dropdown-item">Our Team</a>
                         <a href="{{route('testimonial')}}" class="dropdown-item">Testimonial</a>
+                        <a href="{{route('profile',Auth::user()->id)}}" class="dropdown-item">profile</a>
                         {{-- <a href="{{route('404')}}" class="dropdown-item">404 Page</a> --}}
                     </div>
                 </div>
                 <a href="{{route('contactus')}}" class="nav-item nav-link">Contact</a>
             </div>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+            
+
             <a href="{{route('profile',Auth::user()->id)}}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">{{Auth::user()->name}}<i class="fa fa-arrow-right ms-3"></i></a>
+            {{-- <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a> --}}
         </div>
     </nav>
     <!-- Navbar End -->

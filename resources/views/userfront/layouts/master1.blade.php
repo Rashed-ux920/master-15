@@ -22,6 +22,10 @@
 
     @yield('contant')
 
+    <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+        {{ __('Logout') }}
+    </a>
+
     @include('userfront.includes.section.footerfrontl')
 
 

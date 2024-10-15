@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('userfront.layouts.master')
 
-@section('content')
+@section('contant')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

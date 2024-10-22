@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\user_info;
 use Illuminate\Http\Request;
 
 class viewscontroller extends Controller
@@ -39,7 +40,8 @@ class viewscontroller extends Controller
     }
     public function index10($id){
         $user = User::find($id);
+        $userinfo = user_info::find($id);
         // $userinfo = user_info::find($id);
-        return view('userfront.userpages.profile',compact('user'));
+        return view('userfront.userpages.profile',compact('user','userinfo'));
     }
 }

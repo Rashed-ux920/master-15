@@ -3,6 +3,7 @@ use App\Http\Controllers\viewscontroller;
 use App\Http\Controllers\servicecontroller;
 use App\Http\Controllers\ContactusController;
 use App\Http\Controllers\adminviewscontroller;
+use App\Http\Controllers\UserInfoController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -50,6 +51,10 @@ Route::get('/contact', [contactuscontroller::class, 'index'])->name('contactus')
 Route::get('/home', [viewscontroller::class, 'index9'])->name('home');
 
 Route::get('/profile/{id}',[ViewsController::class, 'index10'])->name('profile');
+
+Route::get('/updateprofile/{id}', [UserInfoController::class,'index'])->name('updateprofile');
+
+Route::post('/updateprofile/{id}',[UserInfoController::class, 'store'])->name('storeuserinfo');
 
 Route::get('/dashboard',[adminviewscontroller::class,'index1'])->name('dashboard');
 

@@ -7,7 +7,7 @@
                         <div class="section-title text-start">
                             <h1 class="display-5 mb-4">Why Choose Us</h1>
                         </div>
-                        <p class="mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
+                        <p class="mb-4 pb-2">we are giveing a great user experince when you are want to make any thing related to wood, you are going to get a premuem work with our qualifaied handymans</p>
                         <div class="row g-4">
                             <div class="col-6">
                                 <div class="d-flex align-items-center">
@@ -58,7 +58,7 @@
                 </div>
                 <div class="col-lg-6 pe-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/feature.jpg" style="object-fit: cover;" alt="">
+                        <img class="position-absolute img-fluid w-100 h-100" src="frontend/img/feature.jpg" style="object-fit: cover;" alt="">
                     </div>
                 </div>
             </div>

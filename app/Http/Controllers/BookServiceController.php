@@ -26,9 +26,28 @@ class BookServiceController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
-        //
+        $request->validate([
+            'date' => 'required|date',
+            'time' => 'required|time',
+            'name' => 'required|string|max:225',
+            'email' => 'required|email|string|max:225',
+            'location' => 'required|string|max:225',
+            'note' => 'required|text|max:225',
+            'servicetype'=> 'required|number'
+        ]);
+        book_service::create(
+            [
+                'date' => $request->date,
+                'name' => $request->name,
+                'time' => $request->time,
+                'location' => $request->location,
+                'note' => $request->note,
+                'user_id' => $id,
+                'service_id' => $request->servicetype
+            ]
+        );
     }
 
     /**

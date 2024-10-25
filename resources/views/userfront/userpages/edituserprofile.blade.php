@@ -9,11 +9,10 @@
                 @if ($userinfo && $userinfo->image == null)
                     <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Default Image">
                 @elseif ($userinfo && $userinfo->image)
-                    <img class="rounded-circle mt-5" width="150px" src="{{$userinfo->image}}" alt="User Image">
+                    <img class="rounded-circle mt-5" width="150px" src="/{{$userinfo->image}}" alt="User Image">
                 @else
                     <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Default Image">
                 @endif
-
     {{--
 
                 @if ($userinfo->image == null)
@@ -31,7 +30,7 @@
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4 class="text-right">Profile Settings</h4>
                 </div>
-                <form action="{{route('storeuserinfo',Auth::user()->id)}}" method="POST" enctype="multipart/form-data" id="updateprofile">
+                <form action="{{route('edituserprofile',Auth::user()->id)}}" method="POST" enctype="multipart/form-data" id="updateprofile">
                     @csrf
                         <div class="row mt-2">
                             <div class="col-md-6 width:100%"><label class="labels ">Name</label><input type="text" class="form-control" placeholder="{{Auth::user()->name}}" disabled></div>
@@ -80,7 +79,7 @@
 
                     </div>
                 </form>
-                <div class="mt-5 text-center"><a class="btn btn-primary profile-botton" onclick="document.getElementById('updateprofile').submit()">edit Profile</a></div>
+                <div class="mt-5 text-center"><a class="btn btn-primary profile-botton" onclick="document.getElementById('updateprofile').submit()">update Profile</a></div>
         </div>
     </div>
 </div>

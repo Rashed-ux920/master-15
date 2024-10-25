@@ -13,9 +13,14 @@ return new class extends Migration
     {
         Schema::create('book_services', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->date('date');
-            $table->string('time');
-            $table->string('price');
+            $table->time('time');
+            $table->string('email');
+            $table->string('location');
+            // $table->string('servicetype');
+            // $table->string('price');
+            $table->text('note');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('service_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

@@ -4,6 +4,7 @@ use App\Http\Controllers\servicecontroller;
 use App\Http\Controllers\ContactusController;
 use App\Http\Controllers\adminviewscontroller;
 use App\Http\Controllers\UserInfoController;
+use App\Models\user_info;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//user side
 
 Route::get('/', function () {
     return view('welcome');
@@ -48,6 +51,10 @@ Route::get('/testimonial',[viewscontroller::class,'index7'])->name('testimonial'
 
 Route::get('/contact', [contactuscontroller::class, 'index'])->name('contactus');
 
+Route::post('/contact', [ContactusController::class,'store'])->name('message');
+
+// Route::post('/contact',[ContactusController::class,'store'])->name('usermessege');
+
 Route::get('/home', [viewscontroller::class, 'index9'])->name('home');
 
 Route::get('/profile/{id}',[ViewsController::class, 'index10'])->name('profile');
@@ -55,6 +62,12 @@ Route::get('/profile/{id}',[ViewsController::class, 'index10'])->name('profile')
 Route::get('/updateprofile/{id}', [UserInfoController::class,'index'])->name('updateprofile');
 
 Route::post('/updateprofile/{id}',[UserInfoController::class, 'store'])->name('storeuserinfo');
+
+Route::get('/editprofile/{id}',[UserInfoController::class,'edit'])->name('editprofile');
+
+Route::post('/editprofile/{id}',[UserInfoController::class,'update'])->name('edituserprofile');
+
+// admin side
 
 Route::get('/dashboard',[adminviewscontroller::class,'index1'])->name('dashboard');
 

@@ -28,7 +28,20 @@ class ContactusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:225',
+            'email' => 'required|email|max:225',
+            'subject' => 'required|string|max:225',
+            'message' => 'required|text',
+        ]);
+        contactus::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'message' => $request->message,
+
+        ]);
+        return to_route('home');
     }
 
     /**
@@ -58,8 +71,11 @@ class ContactusController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(contactus $contactus)
+    public function destroy($id)
     {
-        //
+        $message = contactus::find($id);
+        $message->delete();
+
+        return to_route('dashboard');
     }
 }

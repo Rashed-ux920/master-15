@@ -22,8 +22,23 @@
                 @endif --}}
 
 
+                @if (Auth::user() && Auth::user()->name == null)
+                    <span class="font-weight-bold">
+                        {{__('gust')}}
+                    </span>
+                @elseif (Auth::user() && Auth::user()->name)
+                    <span class="font-weight-bold">
+                        {{Auth::user()->name}}
+                    </span>
 
-                <span class="font-weight-bold">{{Auth::user()->name}}</span><span> </span></div>
+                @else
+                    <span class="font-weight-bold">
+                        {{__('gust')}}
+                    </span>
+                
+
+                @endif
+                <span> </span></div>
         </div>
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
@@ -77,7 +92,7 @@
                 </form>
                 @if ($userinfo)
 
-                    <div class="mt-5 text-center"><a class="btn btn-primary profile-botton" href="{{route('updateprofile',Auth::user()->id)}}">update the profile info</a></div>
+                    <div class="mt-5 text-center"><a class="btn btn-primary profile-botton" href="{{route('editprofile',Auth::user()->id)}}">update the profile info</a></div>
                 @else
 
                     <div class="mt-5 text-center"><a class="btn btn-primary profile-botton" href="{{route('updateprofile',Auth::user()->id)}}">Add Profile info</a></div>

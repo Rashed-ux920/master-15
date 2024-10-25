@@ -23,20 +23,27 @@
                         <div class="section-title text-start">
                             <h1 class="display-5 mb-4">book a service</h1>
                         </div>
-                        <p class="mb-4 pb-2">we are going to send you our team as posible as it could it be</p>
-                        <form>
+                        <p class="mb-4 pb-2">we are going to send you our team as soon  as posible</p>
+                        <form method="POST" action="#">
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;">
+                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;" name="name">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
+                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;" name="email">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Mobile" style="height: 55px;">
+                                    <input type="text" class="form-control border-0" placeholder="Your Mobile Phone number" style="height: 55px;" name="subject">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <select class="form-select border-0" style="height: 55px;">
+                                    <input type="date" name="date" class="form-control border-0" placeholder="Your date of resirve" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="time" name="time" class="form-control border-0" placeholder="Your your time of resirve" style="height: 55px;">
+                                </div>
+
+                                <div class="col-12 col-sm-6">
+                                    <select name class="form-select border-0" style="height: 55px;">
                                         <option selected>Select A Service</option>
                                         <option value="1">general carpentry</option>
                                         <option value="2">furniture manufacturing</option>

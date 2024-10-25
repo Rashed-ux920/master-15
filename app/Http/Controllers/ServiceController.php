@@ -22,30 +22,34 @@ class ServiceController extends Controller
     public function furnitureremodeling(){
         return view('userfront.userpages.servicespages.furnitureremodeling');
     }
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
-    }
 
+        $request->validate([
+            'title' => '|required|string|max:225',
+            'image' => '|required|string|max:225',
+            'description' => '|required|text',
+        ]);
+        if ($request->has('image')) {
+            $file = $request->file('image');
+            $extention = $file->getClientOriginalExtension();
+
+            $filename = time().'.'.$extention;
+            $path='images/services/';
+            $file->move($path,$filename);
+        }
+        service::create([
+            'title' => $request->title,
+            'description' => $request->description,
+
+        ]);
+
+    }
     /**
      * Display the specified resource.
      */
@@ -67,7 +71,7 @@ class ServiceController extends Controller
      */
     public function update(Request $request, service $service)
     {
-        //
+
     }
 
     /**

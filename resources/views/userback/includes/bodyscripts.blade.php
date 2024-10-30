@@ -1,9 +1,9 @@
   <!--   Core JS Files   -->
-  <script src="backend/assets/js/core/popper.min.js"></script>
-  <script src="backend/assets/js/core/bootstrap.min.js"></script>
-  <script src="backend/assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="backend/assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="backend/assets/js/plugins/chartjs.min.js"></script>
+  <script src="{{asset('backend/assets/js/core/popper.min.js')}}"></script>
+  <script src="{{asset('backend/assets/js/core/bootstrap.min.js')}}"></script>
+  <script src="{{asset('backend/assets/js/plugins/perfect-scrollbar.min.js')}}"></script>
+  <script src="{{asset('backend/assets/js/plugins/smooth-scrollbar.min.js')}}"></script>
+  <script src="{{asset('backend/assets/js/plugins/chartjs.min.js')}}"></script>
   <script>
     var ctx = document.getElementById("chart-bars").getContext("2d");
 

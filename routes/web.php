@@ -71,6 +71,12 @@ Route::post('/editprofile/{id}',[UserInfoController::class,'update'])->name('edi
 
 Route::get('/dashboard',[adminviewscontroller::class,'index1'])->name('dashboard');
 
+Route::get('/dashboard/usertable',[adminviewscontroller::class,'usertable'])->name('displayuser');
+
+Route::get('/dasheoard/userupdate/{id}',[adminviewscontroller::class,'edituser'])->name('userrole');
+
+Route::post('/dashboard/userupdate/{id}',[adminviewscontroller::class,'updaterole'])->name('updaterole');
+
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

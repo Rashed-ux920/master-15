@@ -1,3 +1,9 @@
+@extends('userback.layouts.adminmaster')
+@section('contant')
+    {{-- @include('userback.includes.section.sidebar') --}}
+
+
+
 <div class="container-fluid py-4">
     <div class="row">
       <div class="col-12">
@@ -11,15 +17,96 @@
                 <thead>
                   <tr>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Author</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Function</th>
-                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
-                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employed</th>
+                    {{-- <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Function</th> --}}
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">location</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">email</th>
+                    {{-- <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th> --}}
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employedat</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Role</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
                     <th class="text-secondary opacity-7"></th>
                   </tr>
                 </thead>
                 <tbody>
+                    @foreach ($users as $item)
+                    <tr>
+                        <td>
+                            <div class="d-flex px-2 py-1">
+                                <div>
+                                    @if ($item && $item->user_info->image == null)
+                                        <img class="avatar avatar-sm me-3" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Default Image">
+                                    @elseif ($item && $item->user_info->image)
+                                        <img class="avatar avatar-sm me-3" width="150px" src="/{{$item->user_info->image}}" alt="User Image">
+                                    @else
+                                        <img class="avatar avatar-sm me-3" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Default Image">
+                                    @endif
+
+                                    {{-- <img src="../assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3" alt="xd"> --}}
+                                </div>
+                                <div class="d-flex flex-column justify-content-center">
+                                    <h6 class="mb-0 text-sm">{{$item->name}}</h6>
+                                </div>
+                            </div>
+                        </td>
+
+
+
+
+                        <td>
+                            <div class="d-flex px-2 py-1">
+
+                                <div class="d-flex flex-column justify-content-center">
+                                    <h6 class="mb-0 text-sm">{{$item->user_info->location}}</h6>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="d-flex px-2 py-1">
+
+                                <div class="d-flex flex-column justify-content-center">
+                                    <h6 class="mb-0 text-sm">{{$item->email}}</h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex px-2 py-1">
+
+                                <div class="d-flex flex-column justify-content-center">
+                                    <h6 class="mb-0 text-sm">{{$item->user_info->created_at}}</h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex px-2 py-1">
+
+                                <div class="d-flex flex-column justify-content-center">
+                                    <h6 class="mb-0 text-sm">{{$item->user_info->role}}</h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <a class="badge badge-sm bg-gradient-success" href="{{route('userrole',$item->id)}}">edit</a>
+
+                        </td>
+                    </tr>
+                @endforeach
                   <tr>
+                    @foreach ($users as $item)
+                        <td>
+                            <div class="d-flex px-2 py-1">
+                                <div>
+                                  <img src="{{$item->user_info->image}}" class="avatar avatar-sm me-3" alt="user1">
+                                </div>
+                                <div class="d-flex flex-column justify-content-center">
+                                  <h6 class="mb-0 text-sm">John Michael</h6>
+                                  <p class="text-xs text-secondary mb-0">john@creative-tim.com</p>
+                                </div>
+                            </div>
+                        </td>
+                    @endforeach
                     <td>
+
                       <div class="d-flex px-2 py-1">
                         <div>
                           <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user1">
@@ -449,4 +536,10 @@
         </div>
       </div>
     </footer>
-  </div>
+</div>
+
+
+    @include('userback.includes.bodyscripts')
+@endsection
+
+

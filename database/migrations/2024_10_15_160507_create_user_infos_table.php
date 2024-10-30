@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');  // Make sure user_id is an unsigned big integer
             $table->string('location')->nullable();
             $table->date('dateofbirth')->nullable();
+            // $table->date('dateofbirth')->nullable();
             $table->string('phonenumber')->nullable();
             $table->string('image')->nullable();
             $table->string('role')->default('user');

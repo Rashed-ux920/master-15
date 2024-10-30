@@ -17,4 +17,8 @@ class user_info extends Model
         'user_id',
         'role'
     ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

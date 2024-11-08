@@ -4,6 +4,7 @@ use App\Http\Controllers\servicecontroller;
 use App\Http\Controllers\ContactusController;
 use App\Http\Controllers\adminviewscontroller;
 use App\Http\Controllers\UserInfoController;
+use App\Models\service;
 use App\Models\user_info;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -22,7 +23,8 @@ use Illuminate\Support\Facades\Route;
 //user side
 
 Route::get('/', function () {
-    return view('welcome');
+    $services = service::all();
+    return view('welcome',compact('services'));
 })->name('landingpage');
 
 Route::get('/aboute',[viewscontroller::class,'index1'])->name('aboutpage');
@@ -76,6 +78,19 @@ Route::get('/dashboard/usertable',[adminviewscontroller::class,'usertable'])->na
 Route::get('/dasheoard/userupdate/{id}',[adminviewscontroller::class,'edituser'])->name('userrole');
 
 Route::post('/dashboard/userupdate/{id}',[adminviewscontroller::class,'updaterole'])->name('updaterole');
+
+// Route::post();
+Route::get('/dashboard/services',[adminviewscontroller::class,'displayservices'])->name('services');
+
+Route::get('/dashboard/addservice',[adminviewscontroller::class,'addservices'])->name('addservice');
+
+Route::post('/dashboard/addservice',[servicecontroller::class,'store'])->name('storeservice');
+
+Route::get('/dashboard/editservice/{id}',[servicecontroller::class, 'edit'])->name('editservice');
+
+Route::post('/dashboard/editservice/{id}',[servicecontroller::class,'update'])->name('updateservice');
+
+Route::delete('/dasshboard/service/{id}',[servicecontroller::class,'destroy'])->name('deleteservice');
 
 Auth::routes();
 

@@ -13,6 +13,7 @@ class adminviewscontroller extends Controller
 {
     public function midd(){
         $user = User::all();
+        $service = service::all();
         return view('userback.includes.section.middile',compact('user'));
     }
     public function index1(){
@@ -21,7 +22,7 @@ class adminviewscontroller extends Controller
         $services = service::all();
         $booked = book_service::all();
         $contactus = contactus::all();
-        return view('home',compact('users','services', 'booked','contactus'));
+        return view('home',compact('users','services' ,'booked','contactus'));
     }
 
     public function usertable(){
@@ -43,5 +44,16 @@ class adminviewscontroller extends Controller
         );
         return to_route('dashboard');
     }
+    public function displayservices(){
+        $services = service::all();
+        return view('userback.userpage.allservices',compact('services'));
+    }
+    public function addservices(){
+        $user = User::with('user_info')->whereHas('user_info', function($query) {
+            $query->where('role', 'handyman');
+        })->get();
 
+
+        return view('userback.userpage.addservice',compact('user'));
+    }
 }

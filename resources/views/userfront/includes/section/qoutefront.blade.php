@@ -45,10 +45,9 @@
                                 <div class="col-12 col-sm-6">
                                     <select name class="form-select border-0" style="height: 55px;">
                                         <option selected>Select A Service</option>
-                                        <option value="1">general carpentry</option>
-                                        <option value="2">furniture manufacturing</option>
-                                        <option value="3">furniture remodeling</option>
-                                        <option value="4">wooden floor</option>
+                                        @foreach ($services as $item)
+                                            <option value="{{$item->id}}">{{$item->title}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-12">

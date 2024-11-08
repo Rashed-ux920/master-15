@@ -19,7 +19,7 @@
                     <a class="btn btn-link" href="{{route('genaralcarpentry')}}">General Carpentry</a>
                     <a class="btn btn-link" href="{{route('furnituremodeling')}}">Furniture Remodeling</a>
                     <a class="btn btn-link" href="{{route('woodenfloor')}}">Wooden Floor</a>
-                    <a class="btn btn-link" href="{{route('woodenfurniture')}}">Wooden Furniture</a>
+                    {{-- <a class="btn btn-link" href="{{route('woodenfurniture')}}">Wooden Furniture</a> --}}
                     <a class="btn btn-link" href="{{route('customcarpentry')}}">Custom Carpentry</a>
                 </div>
                 <div class="col-lg-3 col-md-6">

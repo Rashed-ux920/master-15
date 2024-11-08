@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\service;
 use App\Models\User;
 use App\Models\user_info;
 use Illuminate\Http\Request;
@@ -12,8 +14,10 @@ class viewscontroller extends Controller
         return view('userfront.userpages.about');
 
     }
+
     public function index2(){
-        return view('userfront.userpages.service');
+        $services = service::all();
+        return view('userfront.userpages.service',compact('services'));
     }
     public function index3(){
         return view('userfront.userpages.project');
@@ -34,9 +38,9 @@ class viewscontroller extends Controller
         return view('userfront.userpages.404page');
     }
     public function index9(){
-
+        $services = service::all();
         // $userinfo = user_info::find($id);
-        return view('userfront.userpages.homeL');
+        return view('userfront.userpages.homeL',compact('services'));
     }
     public function index10($id){
         $user = User::find($id);

@@ -45,4 +45,7 @@ class User extends Authenticatable
     {
         return $this->hasOne(user_info::class);
     }
+    public function service(){
+        return $this->hasOne(service::class);
+    }
 }

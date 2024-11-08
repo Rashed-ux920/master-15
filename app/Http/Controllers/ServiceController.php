@@ -30,11 +30,7 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
 
-        $request->validate([
-            'title' => '|required|string|max:225',
-            'image' => '|required|string|max:225',
-            'description' => '|required|text',
-        ]);
+
         if ($request->has('image')) {
             $file = $request->file('image');
             $extention = $file->getClientOriginalExtension();
@@ -46,9 +42,17 @@ class ServiceController extends Controller
         service::create([
             'title' => $request->title,
             'description' => $request->description,
+            'duration' => $request->duration,
+            'image'=> $filename,
+            'user_id' => $request->user_id
 
         ]);
+        return to_route('dashboard');
 
+    }
+    public function includeservices(){
+        $services = service::all();
+        return view('userfront.includes.section.servicefront',compact('services'));
     }
     /**
      * Display the specified resource.
@@ -61,24 +65,28 @@ class ServiceController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(service $service)
+    public function edit(service $service,$id)
     {
-        //
+        $service = service::findOrFail($id);
+        return view('userback.userpage.editservice',compact('service'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, service $service)
+    public function update(Request $request, service $service,$id)
     {
+
 
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(service $service)
+    public function destroy($id)
     {
-        //
+        $service = service::findOrFail($id);
+        $service->delete();
+        return to_route('dashboard')->with('status' , 'the service deleted');
     }
 }

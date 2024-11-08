@@ -29,250 +29,78 @@
                 </thead>
                 <tbody>
                     @foreach ($users as $item)
-                    <tr>
-                        <td>
-                            <div class="d-flex px-2 py-1">
-                                <div>
-                                    @if ($item && $item->user_info->image == null)
-                                        <img class="avatar avatar-sm me-3" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Default Image">
-                                    @elseif ($item && $item->user_info->image)
-                                        <img class="avatar avatar-sm me-3" width="150px" src="/{{$item->user_info->image}}" alt="User Image">
-                                    @else
-                                        <img class="avatar avatar-sm me-3" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Default Image">
-                                    @endif
+                        <tr>
+                            <td>
+                                <div class="d-flex px-2 py-1">
+                                    <div>
+                                        @if ($item && $item->user_info->image == null)
+                                            <img class="avatar avatar-sm me-3" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Default Image">
+                                        @elseif ($item && $item->user_info->image)
+                                            <img class="avatar avatar-sm me-3" width="150px" src="/{{$item->user_info->image}}" alt="User Image">
+                                        @else
+                                            <img class="avatar avatar-sm me-3" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Default Image">
+                                        @endif
 
-                                    {{-- <img src="../assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3" alt="xd"> --}}
+                                        {{-- <img src="../assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3" alt="xd"> --}}
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h6 class="mb-0 text-sm">{{$item->name}}</h6>
+                                    </div>
                                 </div>
-                                <div class="d-flex flex-column justify-content-center">
-                                    <h6 class="mb-0 text-sm">{{$item->name}}</h6>
+                            </td>
+
+
+
+
+                            <td>
+                                <div class="d-flex px-2 py-1">
+
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h6 class="mb-0 text-sm">{{$item->user_info->location}}</h6>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
+                            </td>
 
+                            <td>
+                                <div class="d-flex px-2 py-1">
 
-
-
-                        <td>
-                            <div class="d-flex px-2 py-1">
-
-                                <div class="d-flex flex-column justify-content-center">
-                                    <h6 class="mb-0 text-sm">{{$item->user_info->location}}</h6>
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h6 class="mb-0 text-sm">{{$item->email}}</h6>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
+                            </td>
+                            <td>
+                                <div class="d-flex px-2 py-1">
 
-                        <td>
-                            <div class="d-flex px-2 py-1">
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h6 class="mb-0 text-sm">{{$item->user_info->created_at}}</h6>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex px-2 py-1">
 
-                                <div class="d-flex flex-column justify-content-center">
-                                    <h6 class="mb-0 text-sm">{{$item->email}}</h6>
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h6 class="mb-0 text-sm">{{$item->user_info->role}}</h6>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex px-2 py-1">
+                            </td>
+                            <td>
+                                <a class="badge badge-sm bg-gradient-success" href="{{route('userrole',$item->id)}}">edit</a>
 
-                                <div class="d-flex flex-column justify-content-center">
-                                    <h6 class="mb-0 text-sm">{{$item->user_info->created_at}}</h6>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex px-2 py-1">
-
-                                <div class="d-flex flex-column justify-content-center">
-                                    <h6 class="mb-0 text-sm">{{$item->user_info->role}}</h6>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <a class="badge badge-sm bg-gradient-success" href="{{route('userrole',$item->id)}}">edit</a>
-
-                        </td>
-                    </tr>
-                @endforeach
-                  <tr>
-                    @foreach ($users as $item)
-                        <td>
-                            <div class="d-flex px-2 py-1">
-                                <div>
-                                  <img src="{{$item->user_info->image}}" class="avatar avatar-sm me-3" alt="user1">
-                                </div>
-                                <div class="d-flex flex-column justify-content-center">
-                                  <h6 class="mb-0 text-sm">John Michael</h6>
-                                  <p class="text-xs text-secondary mb-0">john@creative-tim.com</p>
-                                </div>
-                            </div>
-                        </td>
+                            </td>
+                        </tr>
                     @endforeach
-                    <td>
 
-                      <div class="d-flex px-2 py-1">
-                        <div>
-                          <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user1">
-                        </div>
-                        <div class="d-flex flex-column justify-content-center">
-                          <h6 class="mb-0 text-sm">John Michael</h6>
-                          <p class="text-xs text-secondary mb-0">john@creative-tim.com</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-xs font-weight-bold mb-0">Manager</p>
-                      <p class="text-xs text-secondary mb-0">Organization</p>
-                    </td>
-                    <td class="align-middle text-center text-sm">
-                      <span class="badge badge-sm bg-gradient-success">Online</span>
-                    </td>
-                    <td class="align-middle text-center">
-                      <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
-                    </td>
-                    <td class="align-middle">
-                      <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                        Edit
-                      </a>
-                    </td>
+
+
+
+
+
+
+
                   </tr>
-                  <tr>
-                    <td>
-                      <div class="d-flex px-2 py-1">
-                        <div>
-                          <img src="../assets/img/team-3.jpg" class="avatar avatar-sm me-3" alt="user2">
-                        </div>
-                        <div class="d-flex flex-column justify-content-center">
-                          <h6 class="mb-0 text-sm">Alexa Liras</h6>
-                          <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-xs font-weight-bold mb-0">Programator</p>
-                      <p class="text-xs text-secondary mb-0">Developer</p>
-                    </td>
-                    <td class="align-middle text-center text-sm">
-                      <span class="badge badge-sm bg-gradient-secondary">Offline</span>
-                    </td>
-                    <td class="align-middle text-center">
-                      <span class="text-secondary text-xs font-weight-bold">11/01/19</span>
-                    </td>
-                    <td class="align-middle">
-                      <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                        Edit
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="d-flex px-2 py-1">
-                        <div>
-                          <img src="../assets/img/team-4.jpg" class="avatar avatar-sm me-3" alt="user3">
-                        </div>
-                        <div class="d-flex flex-column justify-content-center">
-                          <h6 class="mb-0 text-sm">Laurent Perrier</h6>
-                          <p class="text-xs text-secondary mb-0">laurent@creative-tim.com</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-xs font-weight-bold mb-0">Executive</p>
-                      <p class="text-xs text-secondary mb-0">Projects</p>
-                    </td>
-                    <td class="align-middle text-center text-sm">
-                      <span class="badge badge-sm bg-gradient-success">Online</span>
-                    </td>
-                    <td class="align-middle text-center">
-                      <span class="text-secondary text-xs font-weight-bold">19/09/17</span>
-                    </td>
-                    <td class="align-middle">
-                      <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                        Edit
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="d-flex px-2 py-1">
-                        <div>
-                          <img src="../assets/img/team-3.jpg" class="avatar avatar-sm me-3" alt="user4">
-                        </div>
-                        <div class="d-flex flex-column justify-content-center">
-                          <h6 class="mb-0 text-sm">Michael Levi</h6>
-                          <p class="text-xs text-secondary mb-0">michael@creative-tim.com</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-xs font-weight-bold mb-0">Programator</p>
-                      <p class="text-xs text-secondary mb-0">Developer</p>
-                    </td>
-                    <td class="align-middle text-center text-sm">
-                      <span class="badge badge-sm bg-gradient-success">Online</span>
-                    </td>
-                    <td class="align-middle text-center">
-                      <span class="text-secondary text-xs font-weight-bold">24/12/08</span>
-                    </td>
-                    <td class="align-middle">
-                      <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                        Edit
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="d-flex px-2 py-1">
-                        <div>
-                          <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user5">
-                        </div>
-                        <div class="d-flex flex-column justify-content-center">
-                          <h6 class="mb-0 text-sm">Richard Gran</h6>
-                          <p class="text-xs text-secondary mb-0">richard@creative-tim.com</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-xs font-weight-bold mb-0">Manager</p>
-                      <p class="text-xs text-secondary mb-0">Executive</p>
-                    </td>
-                    <td class="align-middle text-center text-sm">
-                      <span class="badge badge-sm bg-gradient-secondary">Offline</span>
-                    </td>
-                    <td class="align-middle text-center">
-                      <span class="text-secondary text-xs font-weight-bold">04/10/21</span>
-                    </td>
-                    <td class="align-middle">
-                      <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                        Edit
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="d-flex px-2 py-1">
-                        <div>
-                          <img src="../assets/img/team-4.jpg" class="avatar avatar-sm me-3" alt="user6">
-                        </div>
-                        <div class="d-flex flex-column justify-content-center">
-                          <h6 class="mb-0 text-sm">Miriam Eric</h6>
-                          <p class="text-xs text-secondary mb-0">miriam@creative-tim.com</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-xs font-weight-bold mb-0">Programtor</p>
-                      <p class="text-xs text-secondary mb-0">Developer</p>
-                    </td>
-                    <td class="align-middle text-center text-sm">
-                      <span class="badge badge-sm bg-gradient-secondary">Offline</span>
-                    </td>
-                    <td class="align-middle text-center">
-                      <span class="text-secondary text-xs font-weight-bold">14/09/20</span>
-                    </td>
-                    <td class="align-middle">
-                      <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                        Edit
-                      </a>
-                    </td>
-                  </tr>
+
                 </tbody>
               </table>
             </div>
@@ -280,7 +108,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    {{-- <div class="row">
       <div class="col-12">
         <div class="card mb-4">
           <div class="card-header pb-0">
@@ -503,7 +331,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
     <footer class="footer pt-3  ">
       <div class="container-fluid">
         <div class="row align-items-center justify-content-lg-between">

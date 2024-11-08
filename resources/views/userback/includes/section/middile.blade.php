@@ -173,56 +173,7 @@
                           <div class="progress-bar bg-dark w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                       </div>
-                      {{-- <div class="col-3 py-3 ps-0">
-                        <div class="d-flex mb-2">
-                          <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-info text-center me-2 d-flex align-items-center justify-content-center">
-                            <svg width="10px" height="10px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                              <title>spaceship</title>
-                              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <g transform="translate(-1720.000000, -592.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                                  <g transform="translate(1716.000000, 291.000000)">
-                                    <g transform="translate(4.000000, 301.000000)">
-                                      <path class="color-background" d="M39.3,0.706666667 C38.9660984,0.370464027 38.5048767,0.192278529 38.0316667,0.216666667 C14.6516667,1.43666667 6.015,22.2633333 5.93166667,22.4733333 C5.68236407,23.0926189 5.82664679,23.8009159 6.29833333,24.2733333 L15.7266667,33.7016667 C16.2013871,34.1756798 16.9140329,34.3188658 17.535,34.065 C17.7433333,33.98 38.4583333,25.2466667 39.7816667,1.97666667 C39.8087196,1.50414529 39.6335979,1.04240574 39.3,0.706666667 Z M25.69,19.0233333 C24.7367525,19.9768687 23.3029475,20.2622391 22.0572426,19.7463614 C20.8115377,19.2304837 19.9992882,18.0149658 19.9992882,16.6666667 C19.9992882,15.3183676 20.8115377,14.1028496 22.0572426,13.5869719 C23.3029475,13.0710943 24.7367525,13.3564646 25.69,14.31 C26.9912731,15.6116662 26.9912731,17.7216672 25.69,19.0233333 L25.69,19.0233333 Z"></path>
-                                      <path class="color-background" d="M1.855,31.4066667 C3.05106558,30.2024182 4.79973884,29.7296005 6.43969145,30.1670277 C8.07964407,30.6044549 9.36054508,31.8853559 9.7979723,33.5253085 C10.2353995,35.1652612 9.76258177,36.9139344 8.55833333,38.11 C6.70666667,39.9616667 0,40 0,40 C0,40 0,33.2566667 1.855,31.4066667 Z"></path>
-                                      <path class="color-background" d="M17.2616667,3.90166667 C12.4943643,3.07192755 7.62174065,4.61673894 4.20333333,8.04166667 C3.31200265,8.94126033 2.53706177,9.94913142 1.89666667,11.0416667 C1.5109569,11.6966059 1.61721591,12.5295394 2.155,13.0666667 L5.47,16.3833333 C8.55036617,11.4946947 12.5559074,7.25476565 17.2616667,3.90166667 L17.2616667,3.90166667 Z" opacity="0.598539807"></path>
-                                      <path class="color-background" d="M36.0983333,22.7383333 C36.9280725,27.5056357 35.3832611,32.3782594 31.9583333,35.7966667 C31.0587397,36.6879974 30.0508686,37.4629382 28.9583333,38.1033333 C28.3033941,38.4890431 27.4704606,38.3827841 26.9333333,37.845 L23.6166667,34.53 C28.5053053,31.4496338 32.7452344,27.4440926 36.0983333,22.7383333 L36.0983333,22.7383333 Z" opacity="0.598539807"></path>
-                                    </g>
-                                  </g>
-                                </g>
-                              </g>
-                            </svg>
-                          </div>
-                          <p class="text-xs mt-1 mb-0 font-weight-bold">Clicks</p>
-                        </div>
-                        <h4 class="font-weight-bolder">2m</h4>
-                        <div class="progress w-75">
-                          <div class="progress-bar bg-dark w-90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div> --}}
-                      {{-- <div class="col-3 py-3 ps-0">
-                        <div class="d-flex mb-2">
-                          <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-warning text-center me-2 d-flex align-items-center justify-content-center">
-                            <svg width="10px" height="10px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                              <title>credit-card</title>
-                              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                                  <g transform="translate(1716.000000, 291.000000)">
-                                    <g transform="translate(453.000000, 454.000000)">
-                                      <path class="color-background" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z" opacity="0.593633743"></path>
-                                      <path class="color-background" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
-                                    </g>
-                                  </g>
-                                </g>
-                              </g>
-                            </svg>
-                          </div>
-                          <p class="text-xs mt-1 mb-0 font-weight-bold">Sales</p>
-                        </div>
-                        <h4 class="font-weight-bolder">435$</h4>
-                        <div class="progress w-75">
-                          <div class="progress-bar bg-dark w-30" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div> --}}
+
                       <div class="col-3 py-3 ps-0">
                         <div class="d-flex mb-2">
                           <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-danger text-center me-2 d-flex align-items-center justify-content-center">
@@ -273,111 +224,206 @@
           <div class="row my-4">
             <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
               <div class="card">
-                <div class="card-header pb-0">
-                  <div class="row">
-                    <div class="col-lg-6 col-7">
-                      <h6>users</h6>
-                      <p class="text-sm mb-0">
-                        <i class="fa fa-check text-info" aria-hidden="true"></i>
-                        <span class="font-weight-bold ms-1">30 done</span> this month
-                      </p>
+                    <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-lg-6 col-7">
+                        <h6>users</h6>
+                        <p class="text-sm mb-0">
+                            <i class="fa fa-check text-info" aria-hidden="true"></i>
+                            <span class="font-weight-bold ms-1">{{$users->count()}} users</span> this month
+                        </p>
+                        </div>
+                        {{-- <div class="col-lg-6 col-5 my-auto text-end">
+                        <div class="dropdown float-lg-end pe-4">
+                            <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-ellipsis-v text-secondary"></i>
+                            </a>
+                            <ul class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable">
+                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Action</a></li>
+                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Another action</a></li>
+                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Something else here</a></li>
+                            </ul>
+                        </div>
+                        </div> --}}
                     </div>
-                    {{-- <div class="col-lg-6 col-5 my-auto text-end">
-                      <div class="dropdown float-lg-end pe-4">
-                        <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
-                          <i class="fa fa-ellipsis-v text-secondary"></i>
-                        </a>
-                        <ul class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable">
-                          <li><a class="dropdown-item border-radius-md" href="javascript:;">Action</a></li>
-                          <li><a class="dropdown-item border-radius-md" href="javascript:;">Another action</a></li>
-                          <li><a class="dropdown-item border-radius-md" href="javascript:;">Something else here</a></li>
-                        </ul>
-                      </div>
-                    </div> --}}
-                  </div>
-                </div>
-                <div class="card-body px-0 pb-2">
-                  <div class="table-responsive">
-                    <table class="table align-items-center mb-0">
-                      <thead>
-                        <tr>
-                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">userimage&name</th>
-                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">date of birth</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">location</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">email</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">phone number</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">role</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        @foreach ($users as $item)
-                            <tr>
-                                <td>
-                                    <div class="d-flex px-2 py-1">
-                                        <div>
-                                            @if ($item && $item->user_info->image == null)
-                                                <img class="avatar avatar-sm me-3" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Default Image">
-                                            @elseif ($item && $item->user_info->image)
-                                                <img class="avatar avatar-sm me-3" width="150px" src="/{{$item->user_info->image}}" alt="User Image">
-                                            @else
-                                                <img class="avatar avatar-sm me-3" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Default Image">
-                                            @endif
+                    </div>
+                    <div class="card-body px-0 pb-2">
+                        <div class="table-responsive">
+                            <table class="table align-items-center mb-0">
+                            <thead>
+                                <tr>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">userimage&name</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">date of birth</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">location</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">email</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">phone number</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">role</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($users as $item)
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
+                                                <div>
+                                                    @if ($item && $item->user_info->image == null)
+                                                        <img class="avatar avatar-sm me-3" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Default Image">
+                                                    @elseif ($item && $item->user_info->image)
+                                                        <img class="avatar avatar-sm me-3" width="150px" src="/{{$item->user_info->image}}" alt="User Image">
+                                                    @else
+                                                        <img class="avatar avatar-sm me-3" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Default Image">
+                                                    @endif
 
-                                            {{-- <img src="../assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3" alt="xd"> --}}
-                                        </div>
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <h6 class="mb-0 text-sm">{{$item->name}}</h6>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex px-2 py-1">
+                                                    {{-- <img src="../assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3" alt="xd"> --}}
+                                                </div>
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">{{$item->name}}</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
 
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <h6 class="mb-0 text-sm">{{$item->user_info->dateofbirth}}</h6>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex px-2 py-1">
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">{{$item->user_info->dateofbirth}}</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
 
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <h6 class="mb-0 text-sm">{{$item->user_info->location}}</h6>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex px-2 py-1">
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">{{$item->user_info->location}}</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
 
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <h6 class="mb-0 text-sm">{{$item->email}}</h6>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex px-2 py-1">
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">{{$item->email}}</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
 
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <h6 class="mb-0 text-sm">{{$item->user_info->phonenumber}}</h6>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex px-2 py-1">
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">{{$item->user_info->phonenumber}}</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
 
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <h6 class="mb-0 text-sm">{{$item->user_info->role}}</h6>
-                                        </div>
-                                    </div>
-                                </td>
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">{{$item->user_info->role}}</h6>
+                                                </div>
+                                            </div>
+                                        </td>
 
-                            </tr>
-                        @endforeach
+                                    </tr>
+                                @endforeach
 
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+                            </tbody>
+                            </table>
+                        </div>
+                    </div>
+              </div>
+              <div class="card mp-19">
+                    <div class="card-header pb-0">
+                        <div class="row">
+                            <div class="col-lg-6 col-7">
+                            <h6>services table</h6>
+                            <p class="text-sm mb-0">
+                                <i class="fa fa-check text-info" aria-hidden="true"></i>
+                                <span class="font-weight-bold ms-1">we have {{$services->count()}} service</span>
+                            </p>
+                            </div>
+                            {{-- <div class="col-lg-6 col-5 my-auto text-end">
+                            <div class="dropdown float-lg-end pe-4">
+                                <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-ellipsis-v text-secondary"></i>
+                                </a>
+                                <ul class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable">
+                                <li><a class="dropdown-item border-radius-md" href="javascript:;">Action</a></li>
+                                <li><a class="dropdown-item border-radius-md" href="javascript:;">Another action</a></li>
+                                <li><a class="dropdown-item border-radius-md" href="javascript:;">Something else here</a></li>
+                                </ul>
+                            </div>
+                            </div> --}}
+                        </div>
+                    </div>
+                    <div class="card-body px-0 pb-2">
+                        <div class="table-responsive">
+                            <table class="table align-items-center mb-0">
+                            <thead>
+                                <tr>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">service image & name</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">discription</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">maneger name and image</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">email</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">phone number</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">role</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($services as $item)
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
+                                                <div>
+                                                    @if ($item && $item->image == null)
+                                                        <img class="avatar avatar-sm me-3" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Default Image">
+                                                    @elseif ($item && $item->image)
+                                                        <img class="avatar avatar-sm me-3" width="150px" src="/images/services/{{$item->image}}" alt="User Image">
+                                                    @else
+                                                        <img class="avatar avatar-sm me-3" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Default Image">
+                                                    @endif
+
+                                                    {{-- <img src="../assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3" alt="xd"> --}}
+                                                </div>
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">{{$item->title}}</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
+
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">{{$item->description}}</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
+                                                <div>
+                                                    @if ($item && $item->user->user_info->image == null)
+                                                        <img class="avatar avatar-sm me-3" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Default Image">
+                                                    @elseif ($item && $item->user->user_info->image)
+                                                        <img class="avatar avatar-sm me-3" width="150px" src="{{'/'.$item->user->user_info->image}}" alt="User Image">
+                                                    @else
+                                                        <img class="avatar avatar-sm me-3" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Default Image">
+                                                    @endif
+
+                                                    {{-- <img src="../assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3" alt="xd"> --}}
+                                                </div>
+
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">{{$item->user->name}}</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+
+
+                                    </tr>
+                                @endforeach
+
+                            </tbody>
+                            </table>
+                        </div>
+                    </div>
               </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -449,6 +495,7 @@
                 </div>
               </div>
             </div>
+
           </div>
           <footer class="footer pt-3  ">
             <div class="container-fluid">

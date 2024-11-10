@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\service;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -43,7 +44,7 @@ class ServiceController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'duration' => $request->duration,
-            'image'=> $filename,
+            'image'=> $path.$filename,
             'user_id' => $request->user_id
 
         ]);
@@ -68,6 +69,7 @@ class ServiceController extends Controller
     public function edit(service $service,$id)
     {
         $service = service::findOrFail($id);
+        // $user = User::with('user_info')->whereHas('user_info',function($quiry));
         return view('userback.userpage.editservice',compact('service'));
     }
 

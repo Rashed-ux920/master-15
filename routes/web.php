@@ -88,7 +88,7 @@ Route::post('/dashboard/addservice',[servicecontroller::class,'store'])->name('s
 
 Route::get('/dashboard/editservice/{id}',[servicecontroller::class, 'edit'])->name('editservice');
 
-Route::post('/dashboard/editservice/{id}',[servicecontroller::class,'update'])->name('updateservice');
+Route::put('/dashboard/editservice/{id}',[servicecontroller::class,'update'])->name('updateservice');
 
 Route::delete('/dasshboard/service/{id}',[servicecontroller::class,'destroy'])->name('deleteservice');
 

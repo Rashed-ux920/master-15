@@ -376,7 +376,7 @@
                                                     @if ($item && $item->image == null)
                                                         <img class="avatar avatar-sm me-3" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Default Image">
                                                     @elseif ($item && $item->image)
-                                                        <img class="avatar avatar-sm me-3" width="150px" src="/images/services/{{$item->image}}" alt="User Image">
+                                                        <img class="avatar avatar-sm me-3" width="150px" src="{{$item->image}}" alt="User Image">
                                                     @else
                                                         <img class="avatar avatar-sm me-3" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Default Image">
                                                     @endif

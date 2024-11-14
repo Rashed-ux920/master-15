@@ -10,8 +10,10 @@ use Illuminate\Http\Request;
 class viewscontroller extends Controller
 {
     public function index1(){
-
-        return view('userfront.userpages.about');
+        $admin = User::with('user_info')->wherehas('user_info',function($query){
+            $query->where('role','admin');
+        })->get();
+        return view('userfront.userpages.about',compact('admin'));
 
     }
 
@@ -39,8 +41,11 @@ class viewscontroller extends Controller
     }
     public function index9(){
         $services = service::all();
+        $admin = User::with('user_info')->wherehas('user_info',function($query){
+            $query->where('role','admin');
+        })->get();
         // $userinfo = user_info::find($id);
-        return view('userfront.userpages.homeL',compact('services'));
+        return view('userfront.userpages.homeL',compact('services','admin'));
     }
     public function index10($id){
         $user = User::find($id);

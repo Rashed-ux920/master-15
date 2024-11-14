@@ -6,7 +6,7 @@
                 <h1 class="display-3 text-white mb-3 animated slideInDown">About Us</h1>
                 <nav aria-label="breadcrumb animated slideInDown">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="{{route('home')}}">Home</a></li>
                         <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
                         <li class="breadcrumb-item text-white active" aria-current="page">About</li>
                     </ol>
@@ -69,7 +69,7 @@
                 <div class="row g-0 mx-lg-0">
                     <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
                         <div class="position-relative h-100">
-                            <img class="position-absolute img-fluid w-100 h-100" src="img/about.jpg" style="object-fit: cover;" alt="">
+                            <img class="position-absolute img-fluid w-100 h-100" src="frontend/img/about.jpg" style="object-fit: cover;" alt="">
                         </div>
                     </div>
                     <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
@@ -118,10 +118,30 @@
                     <h1 class="display-5 mb-5">Team Members</h1>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    @foreach ($admin as $item)
+
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="team-item">
+                                <div class="overflow-hidden position-relative">
+                                    <img class="img-fluid" width="450" src="{{$item->user_info->image}}" alt="user">
+                                    <div class="team-social">
+                                        <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                        <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                        <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                                <div class="text-center border border-5 border-light border-top-0 p-4">
+                                    <h5 class="mb-0">{{$item->name}}</h5>
+                                    <small>{{$item->email}}</small>
+                                </div>
+                            </div>
+                        </div>
+
+                    @endforeach
+                    {{-- <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="team-item">
                             <div class="overflow-hidden position-relative">
-                                <img class="img-fluid" src="img/team-1.jpg" alt="">
+                                <img class="img-fluid" src="frontend/img/team-1.jpg" alt="">
                                 <div class="team-social">
                                     <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
@@ -133,11 +153,11 @@
                                 <small>Designation</small>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="team-item">
                             <div class="overflow-hidden position-relative">
-                                <img class="img-fluid" src="img/team-2.jpg" alt="">
+                                <img class="img-fluid" src="frontend/img/team-2.jpg" alt="">
                                 <div class="team-social">
                                     <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
@@ -153,7 +173,7 @@
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-item">
                             <div class="overflow-hidden position-relative">
-                                <img class="img-fluid" src="img/team-3.jpg" alt="">
+                                <img class="img-fluid" src="frontend/img/team-3.jpg" alt="">
                                 <div class="team-social">
                                     <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
@@ -169,7 +189,7 @@
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                         <div class="team-item">
                             <div class="overflow-hidden position-relative">
-                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <img class="img-fluid" src="frontend/img/team-4.jpg" alt="">
                                 <div class="team-social">
                                     <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>

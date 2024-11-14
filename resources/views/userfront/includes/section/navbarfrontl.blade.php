@@ -1,8 +1,15 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-        <a href="{{route('landingpage')}}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        @if (Auth::check())
+        <a href="{{route('home') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <h2 class="m-0 text-primary">{{config('app.name')}}</h2>
         </a>
+        @else
+        <a href="{{route('landingpage') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary">{{config('app.name')}}</h2>
+        </a>
+        @endif
+
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -28,7 +35,7 @@
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
-            
+
 
             <a href="{{route('profile',Auth::user()->id)}}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">{{Auth::user()->name}}<i class="fa fa-arrow-right ms-3"></i></a>
             {{-- <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

@@ -1,20 +1,20 @@
 @extends('userback.layouts.adminmaster')
 @section('contant')
-<meta charset="UTF-8">
+{{-- <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Edit Service</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body> --}}
 <div class="container mt-5">
     <h2 class="mb-4">Edit Service</h2>
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form action="{{route('updateservice',$service->id)}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('put')
         <!-- Title -->
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" id="title" name="title" placeholder="Enter service title" value="{{old($service->title)}}">
+            <input type="text" class="form-control" id="title" name="title" placeholder="{{$service->title}}" value="{{old($service->title)}}">
         </div>
 
         <!-- Image -->
@@ -38,7 +38,13 @@
         <!-- User ID -->
         <div class="mb-3">
             <label for="user_id" class="form-label">User ID</label>
-            <input type="text" class="form-control" id="user_id" name="user_id" placeholder="Enter user ID" required>
+            {{-- <input type="text" class="form-control" id="user_id" name="user_id" placeholder="Enter user ID" required> --}}
+
+            <select name="user_id" id="user_id">
+                @foreach ($user as $item)
+                    <option value="{{$item->id}}">{{$item->name}}</option>
+                @endforeach
+            </select>
         </div>
 
         <!-- Submit Button -->

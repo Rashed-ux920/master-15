@@ -5,6 +5,8 @@ use App\Http\Controllers\ContactusController;
 use App\Http\Controllers\adminviewscontroller;
 use App\Http\Controllers\UserInfoController;
 use App\Models\service;
+
+use App\Models\User;
 use App\Models\user_info;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -24,7 +26,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $services = service::all();
-    return view('welcome',compact('services'));
+    $admin = User::with('user_info')->wherehas('user_info',function($query){
+        $query->where('role','admin');
+    })->get();
+    return view('welcome',compact('services','admin'));
 })->name('landingpage');
 
 Route::get('/aboute',[viewscontroller::class,'index1'])->name('aboutpage');

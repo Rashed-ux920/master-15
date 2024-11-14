@@ -8,7 +8,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="{{route('landingpage')}}" class="nav-item nav-link active">Home</a>
+                <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
                 <a href="{{route('aboutpage')}}" class="nav-item nav-link">About</a>
                 <a href="{{route('service')}}" class="nav-item nav-link">Service</a>
                 <a href="{{route('project')}}" class="nav-item nav-link">Project</a>
@@ -24,9 +24,9 @@
                 </div>
                 <a href="{{route('contactus')}}" class="nav-item nav-link">Contact</a>
             </div>
-            
+
                 @if (Route::has('login'))
-                    
+
                         @auth
                             <a href="{{ url('/home') }}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">{{Auth::user()->name}}</a>
                         @else
@@ -36,10 +36,10 @@
                                 <a href="{{ route('register') }}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Register</a>
                             @endif
                         @endauth
-                    
+
                 @endif
                 {{-- <i class="fa fa-arrow-right ms-3"></i> --}}
-            
+
         </div>
     </nav>
     <!-- Navbar End -->

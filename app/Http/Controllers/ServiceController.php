@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\service;
 use App\Models\User;
+use App\Models\user_info;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -53,14 +54,17 @@ class ServiceController extends Controller
     }
     public function includeservices(){
         $services = service::all();
-        return view('userfront.includes.section.servicefront',compact('services'));
+        $worker = User::with('user_info')->wherehas('user_info',function($quiry){
+            $quiry->where('role','handyman');
+        })->get();
+        return view('userfront.includes.section.servicefront',compact('services','worker'));
     }
     /**
      * Display the specified resource.
      */
     public function show(service $service)
     {
-        //
+
     }
 
     /**
@@ -69,16 +73,35 @@ class ServiceController extends Controller
     public function edit(service $service,$id)
     {
         $service = service::findOrFail($id);
-        // $user = User::with('user_info')->whereHas('user_info',function($quiry));
-        return view('userback.userpage.editservice',compact('service'));
+        $user = User::with('user_info')->whereHas('user_info', function($query) {
+            $query->where('role', 'handyman');
+        })->get();
+        return view('userback.userpage.editservice',compact('service','user'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, service $service,$id)
-    {
+    public function update(Request $request,$id)
 
+    {
+        if ($request->has('image')) {
+            $file = $request->file('image');
+            $extention = $file->getClientOriginalExtension();
+
+            $filename = time().'.'.$extention;
+            $path='images/services/';
+            $file->move($path,$filename);
+        }
+        service::where('id',$id)->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'duration' => $request->duration,
+            'image'=> $path.$filename,
+            'user_id' => $request->user_id
+
+        ]);
+        return to_route('services');
 
     }
 

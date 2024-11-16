@@ -17,7 +17,11 @@
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
                 <a href="{{route('aboutpage')}}" class="nav-item nav-link">About</a>
-                <a href="{{route('service')}}" class="nav-item nav-link">Service</a>
+                @if (Auth::check())
+                <a class="nav-item nav-link" href="{{route('service',$userid)}}">Services</a>
+                @else
+                <a class="nav-item nav-link" href="#">Services</a>
+                @endif
                 <a href="{{route('project')}}" class="nav-item nav-link">Project</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>

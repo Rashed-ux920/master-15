@@ -26,7 +26,11 @@
                     <h4 class="text-light mb-4">Quick Links</h4>
                     <a class="btn btn-link" href="{{route('aboutpage')}}">About Us</a>
                     <a class="btn btn-link" href="{{route('contactus')}}">Contact Us</a>
-                    <a class="btn btn-link" href="{{route('service')}}">Our Services</a>
+                    @if (Auth::check())
+                    <a class="btn btn-link" href="{{route('service',$userid)}}">Our Services</a>
+                    @else
+                    <a class="btn btn-link" href="#">Our Services</a>
+                    @endif
                     {{-- <a class="btn btn-link" href="">Terms & Condition</a> --}}
                     {{-- <a class="btn btn-link" href="">Support</a> --}}
                 </div>

@@ -35,7 +35,7 @@ Route::get('/', function () {
 
 Route::get('/aboute',[viewscontroller::class,'index1'])->name('aboutpage');
 
-Route::get('/service',[viewscontroller::class,'index2'])->name('service');
+Route::get('/service/{id}',[viewscontroller::class,'index2'])->name('service');
 
 Route::post('/service/{id}',[BookServiceController::class, 'store'])->name('storebook');
 

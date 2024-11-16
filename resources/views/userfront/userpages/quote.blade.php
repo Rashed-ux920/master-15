@@ -30,7 +30,7 @@
                 <div class="row g-0 mx-lg-0">
                     <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
                         <div class="position-relative h-100">
-                            <img class="position-absolute img-fluid w-100 h-100" src="frontend/img/quote.jpg" style="object-fit: cover;" alt="">
+                            <img class="position-absolute img-fluid w-100 h-100" src="{{asset('frontend/img/quote.jpg')}}" style="object-fit: cover;" alt="">
                         </div>
                     </div>
                     <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
@@ -39,7 +39,7 @@
                                 <h1 class="display-5 mb-4">book a service</h1>
                             </div>
                             <p class="mb-4 pb-2">we are going to send you our team as soon  as posible</p>
-                            <form method="POST" action="{{route('storebook',Auth::user()->id)}}">
+                            <form method="POST" action="{{route('storebook')}}">
                                 @csrf
                                 <div class="row g-3">
                                     <div class="col-12 col-sm-6">

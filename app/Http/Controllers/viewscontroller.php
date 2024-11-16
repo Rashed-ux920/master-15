@@ -17,9 +17,10 @@ class viewscontroller extends Controller
 
     }
 
-    public function index2(){
+    public function index2($id){
         $services = service::all();
-        return view('userfront.userpages.service',compact('services'));
+        $userid = User::with('user_info')->where('id', $id);
+        return view('userfront.userpages.service',compact('services','userid'));
     }
     public function index3(){
         return view('userfront.userpages.project');

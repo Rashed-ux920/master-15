@@ -16,9 +16,9 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-up m-0">
                         <a href="{{route('feature')}}" class="dropdown-item">Feature</a>
-                        <a href="{{route('freeqoute')}}" class="dropdown-item">Free Quote</a>
+                        <a href="{{route('freeqoute')}}" class="dropdown-item">book a service</a>
                         <a href="{{route('ourteam')}}" class="dropdown-item">Our Team</a>
-                        <a href="{{route('testimonial')}}" class="dropdown-item">Testimonial</a>
+                        {{-- <a href="{{route('testimonial')}}" class="dropdown-item">Testimonial</a> --}}
                         {{-- <a href="{{route('404')}}" class="dropdown-item">404 Page</a> --}}
                     </div>
                 </div>

@@ -3,6 +3,7 @@ use App\Http\Controllers\viewscontroller;
 use App\Http\Controllers\servicecontroller;
 use App\Http\Controllers\ContactusController;
 use App\Http\Controllers\adminviewscontroller;
+use App\Http\Controllers\BookServiceController;
 use App\Http\Controllers\UserInfoController;
 use App\Models\service;
 
@@ -36,6 +37,8 @@ Route::get('/aboute',[viewscontroller::class,'index1'])->name('aboutpage');
 
 Route::get('/service',[viewscontroller::class,'index2'])->name('service');
 
+Route::post('/service/{id}',[BookServiceController::class, 'store'])->name('storebook');
+
 Route::get('/service/woodenfloor',[servicecontroller::class,'woodenfloor'])->name('woodenfloor');
 
 Route::get('/service/genaralcarpentry',[servicecontroller::class,'genaralcarpentry'])->name('genaralcarpentry');
@@ -60,8 +63,6 @@ Route::get('/contact', [contactuscontroller::class, 'index'])->name('contactus')
 
 Route::post('/contact', [ContactusController::class,'store'])->name('message');
 
-// Route::post('/contact',[ContactusController::class,'store'])->name('usermessege');
-
 Route::get('/home', [viewscontroller::class, 'index9'])->name('home');
 
 Route::get('/profile/{id}',[ViewsController::class, 'index10'])->name('profile');
@@ -84,7 +85,6 @@ Route::get('/dasheoard/userupdate/{id}',[adminviewscontroller::class,'edituser']
 
 Route::post('/dashboard/userupdate/{id}',[adminviewscontroller::class,'updaterole'])->name('updaterole');
 
-// Route::post();
 Route::get('/dashboard/services',[adminviewscontroller::class,'displayservices'])->name('services');
 
 Route::get('/dashboard/addservice',[adminviewscontroller::class,'addservices'])->name('addservice');

@@ -35,7 +35,7 @@
                     <span class="font-weight-bold">
                         {{__('gust')}}
                     </span>
-                
+
 
                 @endif
                 <span> </span></div>
@@ -52,33 +52,33 @@
                         </div>
                         <div class="row mt-3">
                             @if ($userinfo && $userinfo->phonenumber == null)
-                                <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="the phone number not assined" ></div>
+                                <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="the phone number not assined" disabled></div>
                             @elseif ($userinfo && $userinfo ->phonenumber)
                              <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" disabled placeholder="{{$userinfo->phonenumber}}"  ></div>
 
                             @else
-                                <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="the phone number not assined"  ></div>
+                                <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="the phone number not assined" disabled ></div>
 
                             @endif
                             {{-- <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" ></div> --}}
                             @if ($userinfo && $userinfo->location == null)
-                                <div class="col-md-12"><label class="labels">location</label><input type="text" class="form-control" placeholder="enter location" ></div>
+                                <div class="col-md-12"><label class="labels">location</label><input type="text" class="form-control" placeholder="enter location" disabled></div>
 
                             @elseif ($userinfo && $userinfo ->location)
-                                <div class="col-md-12"><label class="labels">location</label><input type="text" class="form-control" disabled placeholder="{{$userinfo->location}}" ></div>
+                                <div class="col-md-12"><label class="labels">location</label><input type="text" class="form-control" disabled placeholder="{{$userinfo->location}}" disabled></div>
 
 
                             @else
 
-                                <div class="col-md-12"><label class="labels">location</label><input type="text" class="form-control" placeholder="you don't have any lecotion  record in our files" value=""></div>
+                                <div class="col-md-12"><label class="labels">location</label><input type="text" class="form-control" placeholder="you don't have any lecotion  record in our files" disabled></div>
 
                             @endif
                             @if ($userinfo && $userinfo->dateofbirth)
-                                <div class="col-md-12"><label class="labels">date of birth</label><input type="text" class="form-control" disabled placeholder="{{$userinfo->dateofbirth}}" value=""></div>
+                                <div class="col-md-12"><label class="labels">date of birth</label><input type="text" class="form-control" disabled placeholder="{{$userinfo->dateofbirth}}" disabled></div>
 
 
                             @else
-                                <div class="col-md-12"><label class="labels">date of birth</label><input type="text" class="form-control" placeholder="we don't have any date of birth  record for you" value=""></div>
+                                <div class="col-md-12"><label class="labels">date of birth</label><input type="text" class="form-control" placeholder="we don't have any date of birth  record for you" disabled></div>
 
                             @endif
 

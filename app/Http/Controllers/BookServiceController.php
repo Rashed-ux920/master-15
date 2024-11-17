@@ -28,26 +28,23 @@ class BookServiceController extends Controller
      */
     public function store(Request $request,$id)
     {
-        $request->validate([
-            'date' => 'required|date',
-            'time' => 'required|date_format:H:i',
-            'name' => 'required|string|max:225',
-            'email' => 'required|email|string|max:225',
-            'location' => 'required|string|max:225',
-            'note' => 'required|text|max:225',
-            'servicetype'=> 'required|number'
-        ]);
+
+
         book_service::create(
             [
                 'date' => $request->date,
                 'name' => $request->name,
                 'time' => $request->time,
+                'email' => $request->email,
+                'phonenumber' => $request->phonenumber,
+
                 'location' => $request->location,
                 'note' => $request->note,
                 'user_id' => $id,
                 'service_id' => $request->servicetype
             ]
         );
+        return to_route('home');
 
     }
 

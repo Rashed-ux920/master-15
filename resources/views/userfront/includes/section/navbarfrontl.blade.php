@@ -20,14 +20,20 @@
                 @if (Auth::check())
                 <a class="nav-item nav-link" href="{{route('service',$userid)}}">Services</a>
                 @else
-                <a class="nav-item nav-link" href="#">Services</a>
+                    <a class="nav-item nav-link" href="#">Services</a>
                 @endif
                 <a href="{{route('project')}}" class="nav-item nav-link">Project</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-up m-0">
                         <a href="{{route('feature')}}" class="dropdown-item">Feature</a>
-                        <a href="{{route('freeqoute')}}" class="dropdown-item">Free Quote</a>
+                        @if (Auth::check('login'))
+                        <a href="{{  route('freeqoute',$userid)}}" class="dropdown-item" >services</a>
+                        @else
+
+                        @endif
+
+
                         <a href="{{route('ourteam')}}" class="dropdown-item">Our Team</a>
                         <a href="{{route('testimonial')}}" class="dropdown-item">Testimonial</a>
                         @if (Auth::check())

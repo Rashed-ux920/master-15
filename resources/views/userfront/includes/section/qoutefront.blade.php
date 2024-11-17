@@ -27,6 +27,7 @@
                         <p class="mb-4 pb-2">we are going to send you our team as soon  as posible</p>
 
                             <form method="POST" action="{{route('storebook',$userid)}}">
+                                @csrf
                                 <div class="row g-3">
                                     <div class="col-12 col-sm-6">
                                         <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;" name="name">
@@ -43,9 +44,12 @@
                                     <div class="col-12 col-sm-6">
                                         <input type="time" name="time" class="form-control border-0" placeholder="your time of resirve" style="height: 55px;">
                                     </div>
+                                    <div class="col-12 col-sm-6">
+                                        <input type="text" name="location" class="form-control border-0" placeholder="your location" style="height: 55px;">
+                                    </div>
 
                                     <div class="col-12 col-sm-6">
-                                        <select name class="form-select border-0" style="height: 55px;">
+                                        <select name="servicetype" class="form-select border-0" style="height: 55px;">
                                             <option selected>Select A Service</option>
                                             @foreach ($services as $item)
                                                 <option value="{{$item->id}}">{{$item->title}}</option>
@@ -53,7 +57,7 @@
                                         </select>
                                     </div>
                                     <div class="col-12">
-                                        <textarea class="form-control border-0" placeholder="Special Note"></textarea>
+                                        <textarea name="note" class="form-control border-0" placeholder="Special Note"></textarea>
                                     </div>
                                     <div class="col-12">
                                         <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>

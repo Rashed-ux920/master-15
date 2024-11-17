@@ -53,7 +53,7 @@ Route::get('/project',[viewscontroller::class,'index3'])->name('project');
 
 Route::get('/feature',[viewscontroller::class,'index4'])->name('feature');
 
-Route::get('/freeqoute',[viewscontroller::class,'index5'])->name('freeqoute');
+Route::get('/freeqoute/{id}',[viewscontroller::class,'index5'])->name('freeqoute');
 
 Route::get('/ourteam',[viewscontroller::class,'index6'])->name('ourteam');
 

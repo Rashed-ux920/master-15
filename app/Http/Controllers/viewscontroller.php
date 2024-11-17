@@ -28,9 +28,10 @@ class viewscontroller extends Controller
     public function index4(){
         return view('userfront.userpages.feature');
     }
-    public function index5(){
+    public function index5($id){
         $services = service::all();
-        return view('userfront.userpages.quote',compact('services'));
+        $user = User::with('user_info')->where('id',$id);
+        return view('userfront.userpages.quote',compact('services','user'));
     }
     public function index6(){
         return view('userfront.userpages.ourteam');

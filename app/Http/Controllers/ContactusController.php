@@ -28,11 +28,12 @@ class ContactusController extends Controller
      */
     public function store(Request $request)
     {
+        
         $request->validate([
             'name' => 'required|string|max:225',
             'email' => 'required|email|max:225',
             'subject' => 'required|string|max:225',
-            'message' => 'required|text',
+            'message' => 'required|string',
         ]);
         contactus::create([
             'name' => $request->name,

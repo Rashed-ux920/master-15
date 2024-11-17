@@ -39,7 +39,7 @@
                                 <h1 class="display-5 mb-4">book a service</h1>
                             </div>
                             <p class="mb-4 pb-2">we are going to send you our team as soon  as posible</p>
-                            <form method="POST" action="{{route('storebook',$userid)}}">
+                            <form method="POST" action="{{route('storebook',Auth::user()->id)}}">
                                 @csrf
                                 <div class="row g-3">
                                     <div class="col-12 col-sm-6">

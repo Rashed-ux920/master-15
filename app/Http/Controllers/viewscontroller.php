@@ -29,7 +29,8 @@ class viewscontroller extends Controller
         return view('userfront.userpages.feature');
     }
     public function index5(){
-        return view('userfront.userpages.quote');
+        $services = service::all();
+        return view('userfront.userpages.quote',compact('services'));
     }
     public function index6(){
         return view('userfront.userpages.ourteam');

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->time('time');
             $table->string('email');
             $table->string('location');
+            $table->string('phonenumber');
             // $table->string('servicetype');
             // $table->string('price');
             $table->text('note');

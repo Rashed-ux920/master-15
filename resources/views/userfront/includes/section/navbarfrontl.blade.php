@@ -30,7 +30,10 @@
                         <a href="{{route('freeqoute')}}" class="dropdown-item">Free Quote</a>
                         <a href="{{route('ourteam')}}" class="dropdown-item">Our Team</a>
                         <a href="{{route('testimonial')}}" class="dropdown-item">Testimonial</a>
+                        @if (Auth::check())
                         <a href="{{route('profile',Auth::user()->id)}}" class="dropdown-item">profile</a>
+                        @endif
+
                         {{-- <a href="{{route('404')}}" class="dropdown-item">404 Page</a> --}}
                     </div>
                 </div>
@@ -41,7 +44,9 @@
             </form>
 
 
-            <a href="{{route('profile',Auth::user()->id)}}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">{{Auth::user()->name}}<i class="fa fa-arrow-right ms-3"></i></a>
+            @if (Auth::check())
+                <a href="{{route('profile',Auth::user()->id)}}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">{{Auth::user()->name}}<i class="fa fa-arrow-right ms-3"></i></a>
+            @endif
             {{-- <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 {{ __('Logout') }}
             </a> --}}

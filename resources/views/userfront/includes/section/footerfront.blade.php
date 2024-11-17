@@ -27,9 +27,9 @@
                     <a class="btn btn-link" href="{{route('aboutpage')}}">About Us</a>
                     <a class="btn btn-link" href="{{route('contactus')}}">Contact Us</a>
                     @if (Auth::check())
-                    <a class="btn btn-link" href="{{route('service',$userid)}}">Our Services</a>
+                        <a class="btn btn-link" href="{{route('service',$userid)}}">Our Services</a>
                     @else
-                    <a class="btn btn-link" href="#">Our Services</a>
+                        <a class="btn btn-link" href="#">Our Services</a>
                     @endif
                     {{-- <a class="btn btn-link" href="">Terms & Condition</a> --}}
                     {{-- <a class="btn btn-link" href="">Support</a> --}}

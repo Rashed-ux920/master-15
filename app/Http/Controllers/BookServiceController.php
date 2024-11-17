@@ -30,7 +30,7 @@ class BookServiceController extends Controller
     {
         $request->validate([
             'date' => 'required|date',
-            'time' => 'required|time',
+            'time' => 'required|date_format:H:i',
             'name' => 'required|string|max:225',
             'email' => 'required|email|string|max:225',
             'location' => 'required|string|max:225',
@@ -48,7 +48,7 @@ class BookServiceController extends Controller
                 'service_id' => $request->servicetype
             ]
         );
-        
+
     }
 
     /**

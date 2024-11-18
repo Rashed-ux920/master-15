@@ -37,7 +37,6 @@ class BookServiceController extends Controller
                 'time' => $request->time,
                 'email' => $request->email,
                 'phonenumber' => $request->phonenumber,
-
                 'location' => $request->location,
                 'note' => $request->note,
                 'user_id' => $id,
@@ -60,35 +59,32 @@ class BookServiceController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(book_service $book_service,$id)
-    {
 
+    {
+        $book = book_service::all()->where('id',$id);
+        return view('userfront.userpages.editreservation',compact('book'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, book_service $book_service,$id)
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'date' => 'required|date',
-            'time' => 'required|time',
-            'name' => 'required|string|max:225',
-            'email' => 'required|email|string|max:225',
-            'location' => 'required|string|max:225',
-            'note' => 'required|text|max:225',
-            'servicetype'=> 'required|number'
-        ]);
+
         book_service::where($id)->update(
             [
                 'date' => $request->date,
                 'name' => $request->name,
                 'time' => $request->time,
+                'email' => $request->email,
+                'phonenumber' => $request->phonenumber,
                 'location' => $request->location,
                 'note' => $request->note,
                 'user_id' => $id,
                 'service_id' => $request->servicetype
             ]
         );
+
     }
 
     /**

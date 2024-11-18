@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\book_service;
 use App\Models\service;
 use App\Models\User;
 use App\Models\user_info;
@@ -53,7 +54,8 @@ class viewscontroller extends Controller
     public function index10($id){
         $user = User::find($id);
         $userinfo = user_info::find($id);
-        // $userinfo = user_info::find($id);
-        return view('userfront.userpages.profile',compact('user','userinfo'));
+        $reservation =book_service::all()->where('user_id', $id);
+
+        return view('userfront.userpages.profile',compact('user','userinfo','reservation'));
     }
 }

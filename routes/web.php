@@ -67,6 +67,8 @@ Route::get('/home', [viewscontroller::class, 'index9'])->name('home');
 
 Route::get('/profile/{id}',[ViewsController::class, 'index10'])->name('profile');
 
+Route::get('/reservation/{id}',[BookServiceController::class,'edit'])->name('editreservation');
+
 Route::get('/updateprofile/{id}', [UserInfoController::class,'index'])->name('updateprofile');
 
 Route::post('/updateprofile/{id}',[UserInfoController::class, 'store'])->name('storeuserinfo');

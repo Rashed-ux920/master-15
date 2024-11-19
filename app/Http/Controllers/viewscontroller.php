@@ -48,6 +48,7 @@ class viewscontroller extends Controller
         $admin = User::with('user_info')->wherehas('user_info',function($query){
             $query->where('role','admin');
         })->get();
+        
         // $userinfo = user_info::find($id);
         return view('userfront.userpages.homeL',compact('services','admin'));
     }

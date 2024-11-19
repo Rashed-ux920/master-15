@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('location');
             $table->string('phonenumber');
+            
             // $table->string('servicetype');
             // $table->string('price');
             $table->text('note');

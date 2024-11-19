@@ -63,7 +63,7 @@ Route::get('/contact', [contactuscontroller::class, 'index'])->name('contactus')
 
 Route::post('/contact', [ContactusController::class,'store'])->name('message');
 
-Route::get('/home', [viewscontroller::class, 'index9'])->name('home');
+Route::get('/home', [viewscontroller::class, 'index9'])->middleware(['auth','isadmin'])->name('home');
 
 Route::get('/profile/{id}',[ViewsController::class, 'index10'])->name('profile');
 

@@ -16,6 +16,7 @@
                 @else
                 <a class="nav-item nav-link" href="#">Service</a>
                 @endif
+
                 <a href="{{route('project')}}" class="nav-item nav-link">Project</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
@@ -24,7 +25,9 @@
                         @if (Auth::check('login'))
                         <a href="{{route('freeqoute',$userid)}}" class="dropdown-item">book a service</a>
                         @endif
-
+                        @if (Auth::check() && Auth::user()->user_info->role === 'admin')
+                        <a href="{{route('dashboard')}}" class="dropdown-item">dashboard</a>
+                        @endif
                         <a href="{{route('ourteam')}}" class="dropdown-item">Our Team</a>
                         {{-- <a href="{{route('testimonial')}}" class="dropdown-item">Testimonial</a> --}}
                         {{-- <a href="{{route('404')}}" class="dropdown-item">404 Page</a> --}}

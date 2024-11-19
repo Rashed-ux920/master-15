@@ -20,4 +20,7 @@ class service extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+    public function bookservice(){
+        return $this->hasOne(book_service::class);
+    }
 }

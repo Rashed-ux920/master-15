@@ -48,4 +48,7 @@ class User extends Authenticatable
     public function service(){
         return $this->hasOne(service::class);
     }
+    public function reservation(){
+        return $this->hasOne(book_service::class);
+    }
 }

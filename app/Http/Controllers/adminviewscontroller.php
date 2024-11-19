@@ -19,8 +19,10 @@ class adminviewscontroller extends Controller
     public function index1(){
         $users = User::with('user_info')->get();
 
+
+
         $services = service::all();
-        $booked = book_service::all();
+        $booked = book_service::with('user','service')->get();
         $contactus = contactus::all();
         return view('home',compact('users','services' ,'booked','contactus'));
     }
